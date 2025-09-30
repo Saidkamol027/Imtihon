@@ -1,9 +1,16 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { AdminModule } from './admin/admin.module'
 import { AuthModule } from './auth/auth.module'
+import { BaggageModule } from './baggage/baggage.module'
+import { ClassModule } from './class/class.module'
+import { CompanyModule } from './company/company.module'
+import { FlightModule } from './flight/flight.module'
+import { PlaneModule } from './plane/plane.module'
+import { ReviewModule } from './review/review.module'
+import { SeatModule } from './seat/seat.module'
 import { SeedModule } from './seed/seed.module'
+import { TicketModule } from './ticket/ticket.module'
 import { UsersModule } from './users/users.module'
 
 @Module({
@@ -19,10 +26,17 @@ import { UsersModule } from './users/users.module'
 			synchronize: true,
 			autoLoadEntities: true,
 		}),
-		AdminModule,
 		SeedModule,
 		AuthModule,
 		UsersModule,
+		FlightModule,
+		CompanyModule,
+		PlaneModule,
+		TicketModule,
+		SeatModule,
+		BaggageModule,
+		ClassModule,
+		ReviewModule,
 	],
 })
 export class AppModule {}

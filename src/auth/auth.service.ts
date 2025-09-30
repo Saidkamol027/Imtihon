@@ -10,7 +10,6 @@ import { compare, hash } from 'bcrypt'
 import { Request, Response } from 'express'
 import { User } from 'src/users/entities/user.entity'
 import { Repository } from 'typeorm'
-import { Admin } from '../admin/entities/admin.entity'
 import { LoginAuthDto } from './dto/login-auth.dto'
 import { RegisterAuthDto } from './dto/register-auth.dto'
 
@@ -19,8 +18,7 @@ export class AuthService {
 	constructor(
 		@InjectRepository(User)
 		private readonly authRepo: Repository<User>,
-		private readonly jwtService: JwtService,
-		@InjectRepository(Admin) private readonly adminRepo: Repository<Admin>
+		private readonly jwtService: JwtService
 	) {}
 
 	async register(dto: RegisterAuthDto, res: Response) {
@@ -28,11 +26,7 @@ export class AuthService {
 			where: { email: dto.email },
 		})
 
-		const existsAdminEmail = await this.adminRepo.findOne({
-			where: { email: dto.email },
-		})
-
-		if (existsAdminEmail || existsUserEmail) {
+		if (existsUserEmail) {
 			throw new ConflictException('This email already exist')
 		}
 		const passwordHash = await hash(dto.password, 10)
@@ -111,7 +105,7 @@ export class AuthService {
 				maxAge: 7 * 24 * 60 * 60 * 1000,
 			})
 
-			return { access_token: tokens.access_token }
+			return { message: 'Refresh token ', access_token: tokens.access_token }
 		} catch (error) {
 			throw new UnauthorizedException('Invalid refresh token')
 		}
