@@ -1,0 +1,796 @@
+{
+	"info": {
+		"_postman_id": "579a5a1a-10bf-438b-a3b5-2be180c2a918",
+		"name": "imtihon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42527709",
+		"_collection_link": "https://saidkamol-7382.postman.co/workspace/Tasks~7328f50a-01a2-4eb1-8f18-6922080b6e4e/collection/42527709-579a5a1a-10bf-438b-a3b5-2be180c2a918?action=share&source=collection_link&creator=42527709"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\":\"Saidkamol Akhmadjonov\",\r\n    \"email\":\"akhmadjonovsaidkamol021@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol021@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/auth/refresh"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get one by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\":\"Ahmadjonov Saidkamol\",\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkmaol00\",\r\n    \"phone\":\"+998900573755\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/users/9e7aecab-f272-4628-94d8-00de6b6bcbb2"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\":\"Ahmadjonov Saidkamol\",\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkmaol00\",\r\n    \"phone\":\"+998900573755\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/users/9e7aecab-f272-4628-94d8-00de6b6bcbb2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "get all tickets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/ticket"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": \"2d277149-5f0c-4113-980e-d31965d2df45\",\r\n  \"flight_id\": \"cfb99ac1-928c-4b93-b628-59249a01a469\",\r\n  \"seat_id\": \"c9b8b790-b08f-427c-810b-31f01450c395\",\r\n  \"class_id\": \"4d9d2579-8804-446e-93fb-b9fba91a5fc4\",\r\n  \"price\": 500,\r\n  \"round_trip\": false,\r\n  \"status\": \"booked\",\r\n  \"refund\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/ticket"
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/api/v1/ticket/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"from_city\": \"Tashkent\",\r\n  \"to_city\": \"London\",\r\n  \"departure_time\": \"2025-10-05T10:00:00.000Z\",\r\n  \"arrival_time\": \"2025-10-05T16:00:00.000Z\",\r\n  \"status\": \"scheduled\",\r\n  \"plane\": \"f485e800-050e-43f7-a7b1-7f1744b3c0d4\",\r\n  \"company\": \"4cd3313c-79b8-4654-9456-5209eb08f784\"\r\n}\r\n"
+						},
+						"url": "http://localhost:3000/api/v1/ticket"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/ticket/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Baggage",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"weight\": 23.5,\r\n  \"type\": \"checked\",\r\n  \"user\": \"2d277149-5f0c-4113-980e-d31965d2df45\",\r\n  \"ticket\": \"82eaf76d-9fa2-4cc1-af83-700b88846330\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/baggage"
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/baggage"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/baggage"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/baggage/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/baggage/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "class",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"name\": \"Business\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/class"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"from_city\": \"Tashkent\",\r\n  \"to_city\": \"London\",\r\n  \"departure_time\": \"2025-10-05T10:00:00.000Z\",\r\n  \"arrival_time\": \"2025-10-05T16:00:00.000Z\",\r\n  \"status\": \"scheduled\",\r\n  \"plane\": \"a936693b-30f9-46f3-99d6-c1c1284dc812\",\r\n  \"company\": \"7c3fb753-22bd-47cc-8c60-568af8237a1c\"\r\n}\r\n"
+						},
+						"url": "http://localhost:3000/api/v1/class"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/class"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/class/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/class/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"UzAirways\",\r\n  \"country\": \"Uzbekistan\",\r\n  \"contact\": {\r\n    \"phone\": [\"+998901234567\"],\r\n    \"email\": \"info@uzairways.uz\",\r\n    \"address\": {\r\n      \"line1\": \"Toshkent sh, Mustaqillik ko'chasi 10\",\r\n      \"city\": \"Toshkent\",\r\n      \"country\": \"Uzbekistan\"\r\n    }\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/company"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/company"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/company/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/company/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/company/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "flight",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"from_city\": \"Tashkent\",\r\n  \"to_city\": \"London\",\r\n  \"departure_time\": \"2025-10-05T10:00:00.000Z\",\r\n  \"arrival_time\": \"2025-10-05T16:00:00.000Z\",\r\n  \"status\": \"scheduled\",\r\n  \"plane\": \"f485e800-050e-43f7-a7b1-7f1744b3c0d4\",\r\n  \"company\": \"4cd3313c-79b8-4654-9456-5209eb08f784\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/flight"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"from_city\": \"Tashkent\",\r\n  \"to_city\": \"London\",\r\n  \"departure_time\": \"2025-10-05T10:00:00.000Z\",\r\n  \"arrival_time\": \"2025-10-05T16:00:00.000Z\",\r\n  \"status\": \"scheduled\",\r\n  \"plane\": \"a936693b-30f9-46f3-99d6-c1c1284dc812\",\r\n  \"company\": \"7c3fb753-22bd-47cc-8c60-568af8237a1c\"\r\n}\r\n"
+						},
+						"url": "http://localhost:3000/api/v1/flight"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/flight/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/flight/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/flight/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "plane",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"model\": \"Boeing 737\",\r\n  \"capacity\": 180,\r\n  \"company\": \"4cd3313c-79b8-4654-9456-5209eb08f784\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/plane"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/plane"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/plane/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/plane/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/plane/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"2d277149-5f0c-4113-980e-d31965d2df45\",\r\n  \"flight\": \"cfb99ac1-928c-4b93-b628-59249a01a469\",\r\n  \"rating\": 5,\r\n  \"comment\": \"Great flight, very comfortable!\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/review"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"from_city\": \"Tashkent\",\r\n  \"to_city\": \"London\",\r\n  \"departure_time\": \"2025-10-05T10:00:00.000Z\",\r\n  \"arrival_time\": \"2025-10-05T16:00:00.000Z\",\r\n  \"status\": \"scheduled\",\r\n  \"plane\": \"a936693b-30f9-46f3-99d6-c1c1284dc812\",\r\n  \"company\": \"7c3fb753-22bd-47cc-8c60-568af8237a1c\"\r\n}\r\n"
+						},
+						"url": "http://localhost:3000/api/v1/review"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/review/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/review/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/review/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seat",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"seat_number\": \"12A\",\r\n  \"status\": \"available\",\r\n  \"flight\": \"cfb99ac1-928c-4b93-b628-59249a01a469\",\r\n  \"class\": \"4d9d2579-8804-446e-93fb-b9fba91a5fc4\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/v1/seat"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"from_city\": \"Tashkent\",\r\n  \"to_city\": \"London\",\r\n  \"departure_time\": \"2025-10-05T10:00:00.000Z\",\r\n  \"arrival_time\": \"2025-10-05T16:00:00.000Z\",\r\n  \"status\": \"scheduled\",\r\n  \"plane\": \"a936693b-30f9-46f3-99d6-c1c1284dc812\",\r\n  \"company\": \"7c3fb753-22bd-47cc-8c60-568af8237a1c\"\r\n}\r\n"
+						},
+						"url": "http://localhost:3000/api/v1/seat"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/seat/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/seat/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"akhmadjonovsaidkamol027@gmail.com\",\r\n    \"password\":\"saidkamol00\"\r\n}"
+						},
+						"url": "http://localhost:3000/api/v1/seat/79052a46-d405-48e7-842c-006e24e3bc95"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASIC_URL",
+			"value": "localhost:4000/api/v1/"
+		}
+	]
+}
